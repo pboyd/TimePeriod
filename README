@@ -1,7 +1,7 @@
 TimePeriod - Python module for determining if a datetime is within a time
 period. This is a Python version of Perl's Time::Period module.
 
-Author: Paul Boyd <boyd.paul@gmail.com>
+Author: Paul Boyd <boyd.paul2@gmail.com>
 
 Installation
 ----------------------------------------
