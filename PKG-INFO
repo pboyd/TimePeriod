@@ -1,11 +1,11 @@
-Metadata-Version: 1.0
+Metadata-Version: 1.1
 Name: TimePeriod
 Version: 1.0
-Summary: UNKNOWN
-Home-page: http://static.dev3l.net/TimePeriod/index.html
+Summary: Rewrite of Perl's Time::Period module for Python
+Home-page: http://github.com/pboyd/TimePeriod
 Author: Paul Boyd
-Author-email: boyd.paul@gmail.com
-License: UNKNOWN
-Download-URL: http://static.dev3l.net/TimePeriod/latest.tar.gz
+Author-email: boyd.paul2@gmail.com
+License: LGPL
+Download-URL: http://github.com/pboyd/TimePeriod
 Description: UNKNOWN
-Platform: UNKNOWN
+Platform: Any

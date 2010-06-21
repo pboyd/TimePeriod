@@ -33,14 +33,14 @@ def inPeriod (period, dt=None):
 	Determines if a datetime is within a certain time period. If the time
 	is omitted the current time will be used.
 
-	inPeriod return 1 is the datetime is within the time period, 0 if not.
+	inPeriod returns 1 if the datetime is within the time period, 0 if not.
 	If the expression is malformed a TimePeriod.InvalidFormat exception
 	will be raised. (Note that this differs from Time::Period, which
 	returns -1 if the expression is invalid).
 
 	The format for the time period is like Perl's Time::Period module,
 	which is documented in some detail here:
-	
+
 	http://search.cpan.org/~pryan/Period-1.20/Period.pm
 
 	Here's the quick and dirty version.
