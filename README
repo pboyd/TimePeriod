@@ -1,0 +1,52 @@
+TimePeriod - Python module for determining if a datetime is within a time
+period. This is a Python version of Perl's Time::Period module.
+
+Author: Paul Boyd <boyd.paul@gmail.com>
+
+Installation
+----------------------------------------
+
+To install from an archive:
+
+$ tar zxf TimePeriod-X.Y.tar.gz
+$ cd TimePeriod-X.Y
+$ sudo ./setup.py install
+
+Usage
+----------------------------------------
+
+You can use this module like this:
+
+>>> from TimePeriod import inPeriod
+>>> inPeriod ("wd {th}")
+1
+
+If you want to use a time other than the current time, pass a date time after the period:
+
+m datetime import datetime
+>>> from TimePeriod import inPeriod
+>>> inPeriod ("wd {th}", datetime (2007, 1, 1))
+0
+
+Now we know with certainty that New Year's day 2007 was not on Thursday.
+
+The TimePeriod module uses the same format as Perl's Time::Period module, which is detailed here:
+
+http://search.cpan.org/~pryan/Period-1.20/Period.pm
+
+Differences from Time::Period
+----------------------------------------
+
+There are two intended differences from Time::Period:
+
+1) An exception will be raised for an invalid format. Time::Period returns -1.
+2) TimePeriod uses Python's datetime object, instead of seconds since 1970.
+
+License
+----------------------------------------
+
+Released under the LGPL:
+
+http://www.gnu.org/licenses/#LGPL
+
+Also see the LICENSE file.
