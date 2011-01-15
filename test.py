@@ -173,13 +173,19 @@ InvalidFormat: 0 is not valid for week. Valid options are between 1 and 6.
 Traceback (most recent call last):
 InvalidFormat: An integer value is required for week.
 
->>> inPeriod ("week {2}", datetime (2007, 6, 12))
+>>> inPeriod ("week {3}", datetime (2007, 6, 12))
 1
 
 >>> inPeriod('wk {5-1}', datetime(2010, 12, 20))
 0
 
 >>> inPeriod('wk {6}', datetime(2011, 1, 31))
+1
+
+>>> inPeriod('wk {2}', datetime(2011, 1, 2))
+1
+
+>>> inPeriod('wk {1}', datetime(2011, 5, 1))
 1
 
 Year day tests

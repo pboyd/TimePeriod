@@ -3,6 +3,7 @@ Determines if a datetime is within a given time period. This is a Python
 version of Perl's Time::Period module.
 """
 from datetime import datetime
+import calendar
 import re
 
 __all__ = ['inPeriod', 'InvalidFormat']
@@ -210,7 +211,13 @@ def mo (ranges, dt):
     return 0
 
 def wk (ranges, dt):
-    week = ((dt.day - 1) / 7) + 1
+    # Calculate the week number. This is essentially the number of Sunday's
+    # that have passed.
+    week = 1
+    for day in range(1, dt.day + 1):
+        if (day != 1 and calendar.weekday(dt.year, dt.month, day) == 6):
+            week += 1
+
     return _simple_test (week, ranges, 1, 6, "week")
 
 def yd (ranges, dt):
