@@ -161,13 +161,13 @@ Week tests
 >>> inPeriod ("wk {3-5}", datetime (2007, 6, 2))
 0
 
->>> inPeriod ("wk {6}", datetime (2007, 6, 15))
+>>> inPeriod ("wk {7}", datetime (2007, 6, 15))
 Traceback (most recent call last):
-InvalidFormat: 6 is not valid for week. Valid options are between 1 and 5.
+InvalidFormat: 7 is not valid for week. Valid options are between 1 and 6.
 
 >>> inPeriod ("wk {0}", datetime (2007, 6, 15))
 Traceback (most recent call last):
-InvalidFormat: 0 is not valid for week. Valid options are between 1 and 5.
+InvalidFormat: 0 is not valid for week. Valid options are between 1 and 6.
 
 >>> inPeriod ("wk {xxx}", datetime (2007, 6, 15))
 Traceback (most recent call last):

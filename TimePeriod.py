@@ -297,6 +297,9 @@ def _simple_test (now, ranges, min, max, scale):
     return 0
 
 def _splitrange (range):
+    if range == "":
+        return None, None
+
     lowhigh = range.split ("-")
     low = lowhigh[0]
     high = None
@@ -306,6 +309,9 @@ def _splitrange (range):
     return low, high
 
 def _in_min_max (low, high, min, max, scale):
+    if low == None:
+        return low, high
+
     try:
         low = int(low)
     except ValueError:
@@ -325,6 +331,10 @@ def _in_min_max (low, high, min, max, scale):
     return low, high
 
 def _is_in_range (x, low, high):
+    if low == None and high == None:
+        # empty range, never matches
+        return 0
+
     if high == None or low == high:
         # just one number
         if low != x:
