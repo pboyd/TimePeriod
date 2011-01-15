@@ -67,6 +67,9 @@ InvalidFormat: nv is not a valid scale.
 Traceback (most recent call last):
 InvalidFormat: x is not a valid scale.
 
+>>> inPeriod ("none", datetime (2007, 1, 1))
+0
+
 Year tests
 -------------------
 
@@ -98,6 +101,12 @@ InvalidFormat: An integer value is required for year.
 
 Long name
 >>> inPeriod ("year {2009}", datetime (2009, 6, 12))
+1
+
+>>> inPeriod('yr {2015-2010}', datetime(2011, 1, 1))
+1
+
+>>> inPeriod('yr {1960}', datetime(1960, 1, 1))
 1
 
 Month tests
@@ -165,6 +174,12 @@ Traceback (most recent call last):
 InvalidFormat: An integer value is required for week.
 
 >>> inPeriod ("week {2}", datetime (2007, 6, 12))
+1
+
+>>> inPeriod('wk {5-1}', datetime(2010, 12, 20))
+0
+
+>>> inPeriod('wk {6}', datetime(2011, 1, 31))
 1
 
 Year day tests
@@ -291,10 +306,16 @@ Hour tests
 >>> inPeriod ("hr {noon}", datetime (2007, 6, 12, 12, 05))
 1
 
+>>> inPeriod("hr {12pm}", datetime(2007, 6, 12, 12, 05))
+1
+
 >>> inPeriod ("hr {12midnight}", datetime (2007, 6, 12, 0, 05))
 1
 
 >>> inPeriod ("hr {midnight}", datetime (2007, 6, 12, 0, 05))
+1
+
+>>> inPeriod ("hr {12am}", datetime (2007, 6, 12, 0, 05))
 1
 
 >>> inPeriod ("hr {10am-1pm}", datetime (2007, 6, 12, 13, 05))
@@ -413,13 +434,43 @@ Time::Period's Examples
 >>> inPeriod ("minute { 0-29 }", datetime (2007, 8, 1, 12, 15))
 1
 
->>> inPeriod ("hour { 12am-11am }", datetime (2007, 8, 1, 12))
+>>> inPeriod ("hour { 12am-11am }", datetime (2007, 8, 1, 1))
 1
 
 >>> inPeriod ("sec {0-4 10-14 20-24 30-34 40-44 50-54}", datetime (2007, 8, 1, 12, 15, 22))
 1
 
 >>> inPeriod ("wd {1 3 5 7} min {0-29}, wd {2 4 6} min {30-59}", datetime (2007, 6, 10, 12, 45))
+0
+
+Empty Ranges
+------------
+
+>>> inPeriod('yr {}', datetime(2011, 1, 1))
+0
+
+>>> inPeriod('mo {}', datetime(2011, 1, 1))
+0
+
+>>> inPeriod('wk {}', datetime(2011, 1, 1))
+0
+
+>>> inPeriod('yd {}', datetime(2011, 1, 1))
+0
+
+>>> inPeriod('md {}', datetime(2011, 1, 1))
+0
+
+>>> inPeriod('wd {}', datetime(2011, 1, 1))
+0
+
+>>> inPeriod('hr {}', datetime(2011, 1, 1))
+0
+
+>>> inPeriod('min {}', datetime(2011, 1, 1))
+0
+
+>>> inPeriod('sec {}', datetime(2011, 1, 1))
 0
 
 """
