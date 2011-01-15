@@ -1,0 +1,17 @@
+Version 1.02:
+    * Bug: "none" matching nothing (formerly it matched everything).
+    * Bug: Inverted year ranges (e.g. 2015-2010) are now equivalent to standard
+      formatted ranges.
+    * Bug: "12pm" and "12am" are handled correctly for hours now.
+    * Bug: Empty ranges (e.g. "wk {}") are no longer an error, but they never
+      match.
+    * Bug: The week number calculation is fixed:
+        - Previously, the days 1-7 would be the first week, 8-14 would be the
+          second week, etc.
+        - Now, it counts the number of Sunday's that have passed.
+
+Version 1.01:
+    * Minor doc updates
+
+Version 1.00:
+    * Initial release

@@ -37,10 +37,11 @@ http://search.cpan.org/~pryan/Period-1.20/Period.pm
 Differences from Time::Period
 ----------------------------------------
 
-There are two intended differences from Time::Period:
+There are a few intended differences from Time::Period:
 
 1) An exception will be raised for an invalid format. Time::Period returns -1.
-2) TimePeriod uses Python's datetime object, instead of seconds since 1970.
+2) TimePeriod uses Python's datetime object, instead of an epoch.
+3) Years are considered to have a maximum of 366 days, not 365.
 
 License
 ----------------------------------------

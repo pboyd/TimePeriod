@@ -1,11 +1,11 @@
-Metadata-Version: 1.01
+Metadata-Version: 1.02
 Name: TimePeriod
-Version: 1.01
+Version: 1.02
 Summary: Rewrite of Perl's Time::Period module for Python
 Home-page: http://github.com/pboyd/TimePeriod
 Author: Paul Boyd
 Author-email: boyd.paul2@gmail.com
 License: LGPL
-Download-URL: http://github.com/downloads/pboyd/TimePeriod/TimePeriod-1.01.tar.gz
+Download-URL: http://github.com/downloads/pboyd/TimePeriod/TimePeriod-1.02.tar.gz
 Description: UNKNOWN
 Platform: Any
